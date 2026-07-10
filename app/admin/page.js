@@ -1,0 +1,3 @@
+'use client';
+import { useState } from 'react';
+export default function Admin(){const [rates,setRates]=useState({clothing:625,electronics:675,perfume:675});return <main className="page dashboard-bg"><div className="container"><p className="eyebrow dark-text">Admin portal demo</p><h1>Pricing controls</h1><div className="panel"><div className="form-grid">{Object.entries(rates).map(([k,v])=><label key={k}>{k} rate / lb (GYD)<input type="number" value={v} onChange={e=>setRates({...rates,[k]:e.target.value})}/></label>)}</div><button className="button" type="button">Save demo rates</button><p className="fine-print">This page demonstrates the intended admin experience. Changes are not yet connected to a production database.</p></div></div></main>}
