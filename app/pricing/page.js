@@ -1,2 +1,0 @@
-import QuoteCalculator from '@/components/QuoteCalculator';
-export default function Pricing(){return <main className="page"><div className="container"><p className="eyebrow dark-text">Pricing</p><h1>Plan your shipment before you buy</h1><p className="lead">Use the calculator for a planning estimate. Final rates may change after inspection, carrier confirmation, and customs assessment.</p><QuoteCalculator/></div></main>}
