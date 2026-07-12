@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Shop2GY — Shop the World. Delivered to Guyana." />
+  <title>Shop2GY | Shop the World. Delivered to Guyana.</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Shop2GY home">
+      <span class="brand-mark">S2</span><span>Shop<span class="gold">2</span>GY</span>
+    </a>
+    <button class="menu-button" id="menuButton" aria-label="Open navigation" aria-expanded="false">☰</button>
+    <nav id="siteNav" class="site-nav" aria-label="Primary navigation">
+      <a href="#services">Services</a>
+      <a href="#quote">Quote</a>
+      <a href="#tracking">Track</a>
+      <a href="#shop-for-me">Shop For Me</a>
+      <a href="#business">Business</a>
+      <a href="#faq">FAQ</a>
+      <a class="nav-login" href="#portal">Portal</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero section-pad">
+      <div class="hero-copy">
+        <p class="eyebrow">USA → GUYANA LOGISTICS</p>
+        <h1>Shop the World.<br />Delivered to Guyana.</h1>
+        <p class="lead">Shop from your favorite U.S. stores. We receive, consolidate, ship, track and deliver your packages to Guyana.</p>
+        <div class="cta-row">
+          <a class="button primary" href="#quote">Get a Quote</a>
+          <a class="button secondary" href="#register">Create Account</a>
+        </div>
+        <div class="trust-row">
+          <span>✓ Transparent pricing</span>
+          <span>✓ Package photos</span>
+          <span>✓ Home delivery</span>
+        </div>
+      </div>
+      <div class="hero-panel" aria-label="Shipment status preview">
+        <div class="floating-card">
+          <p class="small-label">PACKAGE STATUS</p>
+          <h3>PKG-100245</h3>
+          <div class="status-line active"><span></span>Received in Florida</div>
+          <div class="status-line active"><span></span>Processed & weighed</div>
+          <div class="status-line"><span></span>Ready to ship</div>
+          <div class="status-line"><span></span>Arrived in Guyana</div>
+          <div class="status-line"><span></span>Delivered</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section-pad section-white">
+      <div class="section-heading">
+        <p class="eyebrow green">SERVICES</p>
+        <h2>One platform for shopping, shipping and delivery.</h2>
+      </div>
+      <div class="card-grid six">
+        <article class="service-card"><div class="icon">📦</div><h3>Package Forwarding</h3><p>Use your Shop2GY U.S. address when shopping online.</p></article>
+        <article class="service-card"><div class="icon">✈️</div><h3>Air Freight</h3><p>Fast consolidated shipping for clothing, electronics and more.</p></article>
+        <article class="service-card"><div class="icon">🚢</div><h3>Ocean Freight</h3><p>Affordable shipping for furniture, appliances and oversized cargo.</p></article>
+        <article class="service-card"><div class="icon">🛒</div><h3>Shop For Me</h3><p>Send us a product link and our team can purchase it for you.</p></article>
+        <article class="service-card"><div class="icon">🚚</div><h3>Home Delivery</h3><p>Schedule local delivery in Guyana after clearance.</p></article>
+        <article class="service-card"><div class="icon">🏢</div><h3>Business Shipping</h3><p>Volume pricing, consolidated imports and account support.</p></article>
+      </div>
+    </section>
+
+    <section id="quote" class="section-pad section-soft">
+      <div class="section-heading">
+        <p class="eyebrow green">SMART QUOTE</p>
+        <h2>Estimate your shipment cost.</h2>
+        <p>Planning estimates only. Final pricing may change after inspection, customs review and carrier confirmation.</p>
+      </div>
+      <div class="calculator-layout">
+        <form id="quoteForm" class="panel form-panel">
+          <div class="form-grid">
+            <label>Shipping method
+              <select id="shippingMethod"><option value="air">Air Freight</option><option value="ocean">Ocean Freight</option></select>
+            </label>
+            <label>Product type
+              <select id="productType">
+                <option value="clothing">Clothing</option><option value="shoes">Shoes</option><option value="electronics">Electronics</option><option value="phones">Phones</option><option value="laptops">Laptops</option><option value="tvs">TVs</option><option value="perfume">Perfume / Fragrance</option><option value="auto">Auto Parts</option><option value="furniture">Furniture</option><option value="documents">Documents</option><option value="other">Other</option>
+              </select>
+            </label>
+            <label>Weight (lb)<input id="weight" type="number" min="0.1" step="0.1" value="5" required /></label>
+            <label>Declared value (USD)<input id="value" type="number" min="0" step="1" value="100" required /></label>
+            <label>Delivery option
+              <select id="delivery"><option value="pickup">Pickup</option><option value="georgetown">Georgetown Delivery</option><option value="eastbank">East Bank Delivery</option><option value="eastcoast">East Coast Delivery</option><option value="linden">Linden Delivery</option><option value="berbice">Berbice Delivery</option></select>
+            </label>
+            <label>Insurance
+              <select id="insurance"><option value="no">No</option><option value="yes">Yes</option></select>
+            </label>
+          </div>
+          <label>Coupon code<input id="coupon" type="text" placeholder="Optional" /></label>
+          <button class="button primary full" type="submit">Calculate Estimate</button>
+          <div id="quoteWarning" class="warning hidden"></div>
+        </form>
+        <aside class="panel result-panel" aria-live="polite">
+          <p class="small-label">ESTIMATED TOTAL</p>
+          <div id="quoteTotal" class="quote-total">GYD 0</div>
+          <div class="breakdown" id="quoteBreakdown">
+            <div><span>Shipping</span><strong>GYD 0</strong></div>
+            <div><span>Handling</span><strong>GYD 0</strong></div>
+            <div><span>Insurance</span><strong>GYD 0</strong></div>
+            <div><span>Special handling</span><strong>GYD 0</strong></div>
+            <div><span>Delivery</span><strong>GYD 0</strong></div>
+          </div>
+          <p class="fine-print">Customs duties and taxes are not included in this planning estimate.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="tracking" class="section-pad section-navy">
+      <div class="section-heading light-text">
+        <p class="eyebrow gold-text">PACKAGE TRACKING</p>
+        <h2>Know where your package is.</h2>
+        <p>Try demo tracking number <strong>PKG-100245</strong>.</p>
+      </div>
+      <form id="trackingForm" class="tracking-form">
+        <input id="trackingInput" type="text" placeholder="Enter package ID or tracking number" required />
+        <button class="button gold-button" type="submit">Track Package</button>
+      </form>
+      <div id="trackingResult" class="tracking-result hidden"></div>
+    </section>
+
+    <section id="shop-for-me" class="section-pad section-white">
+      <div class="split-layout">
+        <div>
+          <p class="eyebrow green">SHOP FOR ME</p>
+          <h2>No U.S. card? No problem.</h2>
+          <p class="lead dark-lead">Paste a product link and submit a purchase request. Shop2GY can review the item, send a quote and purchase it on your behalf.</p>
+          <ul class="check-list"><li>Amazon, Walmart, Best Buy, Shein and more</li><li>Clear service fees</li><li>Shipping estimate before approval</li></ul>
+        </div>
+        <form id="shopForm" class="panel form-panel">
+          <label>Product link<input type="url" id="productUrl" placeholder="https://..." required /></label>
+          <label>Quantity<input type="number" id="quantity" min="1" value="1" required /></label>
+          <label>Notes<textarea id="shopNotes" rows="4" placeholder="Color, size, model, etc."></textarea></label>
+          <button class="button primary full" type="submit">Submit Request</button>
+          <div id="shopMessage" class="success hidden"></div>
+        </form>
+      </div>
+    </section>
+
+    <section id="business" class="section-pad section-soft">
+      <div class="section-heading">
+        <p class="eyebrow green">BUSINESS ACCOUNTS</p>
+        <h2>Built for importers and growing businesses.</h2>
+      </div>
+      <div class="card-grid three">
+        <article class="feature-card"><h3>Volume Pricing</h3><p>Pricing tiers for recurring and consolidated shipments.</p></article>
+        <article class="feature-card"><h3>Monthly Reporting</h3><p>Shipment history, invoices and cost reporting in one place.</p></article>
+        <article class="feature-card"><h3>Priority Support</h3><p>Dedicated help for time-sensitive and commercial imports.</p></article>
+      </div>
+    </section>
+
+    <section id="register" class="section-pad section-white">
+      <div class="section-heading"><p class="eyebrow green">CREATE ACCOUNT</p><h2>Get your Shop2GY Customer ID.</h2></div>
+      <div class="portal-layout">
+        <form id="registerForm" class="panel form-panel">
+          <div class="form-grid">
+            <label>First name<input id="firstName" required /></label>
+            <label>Last name<input id="lastName" required /></label>
+            <label>Email<input id="email" type="email" required /></label>
+            <label>WhatsApp / Phone<input id="phone" required /></label>
+          </div>
+          <label>Guyana address<textarea id="address" rows="3" required></textarea></label>
+          <button class="button primary full" type="submit">Create Demo Account</button>
+          <p class="fine-print">Demo only: data is saved in this browser. Production authentication and database storage will be added later.</p>
+        </form>
+        <aside id="accountResult" class="panel account-card">
+          <p class="small-label">YOUR CUSTOMER ID</p>
+          <div class="customer-id">Not created</div>
+          <p>Your assigned U.S. shipping address will appear here after registration.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="portal" class="section-pad section-soft">
+      <div class="section-heading"><p class="eyebrow green">CUSTOMER PORTAL DEMO</p><h2>Your virtual shipping locker.</h2></div>
+      <div class="dashboard panel">
+        <div class="dashboard-top"><div><p class="small-label">WELCOME</p><h3 id="portalName">Shop2GY Customer</h3><p id="portalId">Customer ID: —</p></div><button id="resetDemo" class="text-button">Reset demo data</button></div>
+        <div class="stats-grid">
+          <div class="stat"><strong>4</strong><span>In Florida</span></div><div class="stat"><strong>2</strong><span>In Transit</span></div><div class="stat"><strong>1</strong><span>Ready</span></div><div class="stat"><strong>27</strong><span>Delivered</span></div>
+        </div>
+        <div class="dashboard-grid">
+          <div><h4>U.S. Shipping Address</h4><pre id="portalAddress">Register to generate your demo address.</pre></div>
+          <div><h4>Quick Actions</h4><div class="quick-actions"><a href="#quote">Get Quote</a><a href="#tracking">Track</a><a href="#shop-for-me">Shop For Me</a><a href="#packages">My Packages</a><a href="#delivery-request">Request Delivery</a><a href="#invoice-center">Upload Invoice</a></div></div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="packages" class="section-pad section-white">
+      <div class="section-heading"><p class="eyebrow green">MY PACKAGES</p><h2>Manage every package in one place.</h2><p>Review package details, current status and next actions from your virtual locker.</p></div>
+      <div class="package-toolbar panel">
+        <input id="packageSearch" type="search" placeholder="Search package ID, store or status" />
+        <select id="packageFilter"><option value="all">All statuses</option><option value="florida">In Florida</option><option value="transit">In transit</option><option value="ready">Ready</option><option value="delivered">Delivered</option></select>
+      </div>
+      <div id="packageList" class="package-list"></div>
+    </section>
+
+    <section id="delivery-request" class="section-pad section-soft">
+      <div class="section-heading"><p class="eyebrow green">DELIVERY REQUEST</p><h2>Schedule pickup or home delivery.</h2><p>Select a package, confirm your destination and submit delivery instructions.</p></div>
+      <div class="portal-layout">
+        <form id="deliveryForm" class="panel form-panel">
+          <label>Package<select id="deliveryPackage" required></select></label>
+          <label>Delivery method<select id="deliveryMethod"><option value="pickup">Pickup at Shop2GY</option><option value="home">Home delivery</option></select></label>
+          <label>Preferred date<input id="deliveryDate" type="date" required /></label>
+          <label>Delivery address<textarea id="deliveryAddress" rows="3" required></textarea></label>
+          <label>Special instructions<textarea id="deliveryNotes" rows="3" placeholder="Gate code, landmark, contact instructions, etc."></textarea></label>
+          <button class="button primary full" type="submit">Submit Delivery Request</button>
+          <div id="deliveryMessage" class="success hidden"></div>
+        </form>
+        <aside class="panel result-panel">
+          <p class="small-label">DELIVERY GUIDANCE</p>
+          <h3>What happens next</h3>
+          <ol class="number-list"><li>Shop2GY reviews your request.</li><li>Delivery fees are confirmed.</li><li>You receive a scheduling notification.</li><li>The driver completes delivery and captures confirmation.</li></ol>
+        </aside>
+      </div>
+    </section>
+
+    <section id="invoice-center" class="section-pad section-white">
+      <div class="section-heading"><p class="eyebrow green">INVOICE CENTER</p><h2>Keep purchase documents with each package.</h2><p>Upload an invoice or receipt so your package can be reviewed and processed more quickly.</p></div>
+      <div class="portal-layout">
+        <form id="invoiceForm" class="panel form-panel">
+          <label>Package<select id="invoicePackage" required></select></label>
+          <label>Retailer<input id="invoiceRetailer" placeholder="Amazon, Walmart, Shein, etc." required /></label>
+          <label>Purchase value (USD)<input id="invoiceValue" type="number" min="0" step="0.01" required /></label>
+          <label>Invoice file<input id="invoiceFile" type="file" accept=".pdf,.jpg,.jpeg,.png" required /></label>
+          <button class="button primary full" type="submit">Save Invoice</button>
+          <div id="invoiceMessage" class="success hidden"></div>
+          <p class="fine-print">Demo only: the filename and purchase details are saved in this browser. The file itself is not uploaded to a server.</p>
+        </form>
+        <aside class="panel">
+          <p class="small-label">SAVED INVOICES</p>
+          <div id="invoiceList" class="mini-list"></div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="notifications" class="section-pad section-soft">
+      <div class="section-heading"><p class="eyebrow green">NOTIFICATIONS</p><h2>Your latest Shop2GY updates.</h2></div>
+      <div class="notification-list panel" id="notificationList"></div>
+    </section>
+
+    <section id="admin" class="section-pad section-white">
+      <div class="section-heading"><p class="eyebrow green">ADMIN PRICING DEMO</p><h2>Edit calculator rates without changing code.</h2></div>
+      <form id="adminForm" class="panel form-panel admin-form">
+        <div class="form-grid">
+          <label>Clothing rate / lb (GYD)<input id="rateClothing" type="number" min="0" /></label>
+          <label>Electronics rate / lb (GYD)<input id="rateElectronics" type="number" min="0" /></label>
+          <label>Phones / laptops rate / lb (GYD)<input id="ratePremium" type="number" min="0" /></label>
+          <label>Perfume surcharge (GYD)<input id="ratePerfume" type="number" min="0" /></label>
+          <label>Standard handling (GYD)<input id="rateHandling" type="number" min="0" /></label>
+          <label>Insurance percentage<input id="rateInsurance" type="number" min="0" step="0.1" /></label>
+        </div>
+        <button class="button primary" type="submit">Save Demo Rates</button>
+        <span id="adminMessage" class="inline-message"></span>
+      </form>
+    </section>
+
+    <section id="faq" class="section-pad section-soft">
+      <div class="section-heading"><p class="eyebrow green">FAQ</p><h2>Frequently asked questions.</h2></div>
+      <div class="faq-list">
+        <details><summary>How do I get a U.S. shipping address?</summary><p>Create a Shop2GY account. Your customer ID and assigned U.S. address will appear in your dashboard.</p></details>
+        <details><summary>Can I ship perfume?</summary><p>Perfume is treated as a restricted or hazardous item and may require special handling, additional fees or a different shipping method.</p></details>
+        <details><summary>Does the quote include customs duties?</summary><p>No. The website estimate covers Shop2GY shipping and selected services. Customs duties and taxes are determined separately.</p></details>
+        <details><summary>Can businesses receive volume pricing?</summary><p>Yes. Business accounts can receive negotiated rates based on frequency, weight and service requirements.</p></details>
+      </div>
+    </section>
+
+    <section id="contact" class="section-pad section-navy contact-section">
+      <div><p class="eyebrow gold-text">CONTACT</p><h2>Ready to shop and ship smarter?</h2><p>Use the account form above to create a demo profile and explore Version 1.0.</p></div>
+      <a class="button gold-button" href="#register">Create Account</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="brand footer-brand"><span class="brand-mark">S2</span><span>Shop<span class="gold">2</span>GY</span></div>
+    <p>Shop the World. Delivered to Guyana.</p>
+    <p>© <span id="year"></span> Shop2GY. Version 1.1 Customer Portal MVP.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
